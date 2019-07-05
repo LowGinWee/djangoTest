@@ -10,7 +10,7 @@ def index(request):
     # Order the categories by no. likes in descending order.
     # Retrieve the top 5 only - or all if less than 5.
     # Place the list in our context_dict which will be passed to the template.
-    category_list = Category.objects.order_by('-likes')[:5]
+    category_list = Category.objects.order_by('-likes')
     context_dict = {'categories': category_list}
     for category in category_list:
         category.url = category.name.replace(' ', '_')
